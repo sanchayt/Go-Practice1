@@ -42,8 +42,8 @@ func main() {
 	fm.Printf("Is %s over age of 18? %t and he has $%d and also his age is %.2f\n", name, isOver18, number, decimal )
 	
 	//Example of loops and switch statements
-	i := 0
-	for i <= 7 {
+	
+	for i := 0; i <= 7; i++ {
 		switch i {
 		case Sunday: fm.Println("It is Sunday")
 		case Monday: fm.Println("It is Monday")
@@ -55,7 +55,6 @@ func main() {
 	 	default: fm.Println("Wrong Number")
 		}
 
-		i++
 	}
 
 	//Trying few things with strings
@@ -66,6 +65,35 @@ func main() {
 	fm.Println("The length is", len(test))
 	fm.Println("The ith character is", string(test[x]))
 	
+	//Arrays
+	var favNums[5] float64
 
+	favNums[0] = 12.3
+	favNums[1] = 135
+	favNums[2] = 405.7
+	favNums[3] = 69.29
+	favNums[4] = 2.0486
 
+	fm.Println(favNums[3])
+
+	favNums2 := [5]float64 {68,98,12,39,20}
+	//with index
+	for i, value := range favNums2 {
+		fm.Println(value, i)
+	}
+	//without index
+	for _, value := range favNums2 {
+		fm.Println(value)
+	}
+	
+	//Slice example
+	numSlice := []int {5,4,3,2,1}
+
+	numSlice2 := numSlice[3:5]
+	fm.Println("numSlice2[2] =",numSlice2[2])
+
+	fm.Println("numSlice[:2] =",numSlice[:2])
+
+	
+	
 }
